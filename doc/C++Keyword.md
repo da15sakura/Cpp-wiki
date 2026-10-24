@@ -25,10 +25,10 @@
   - [バージョン情報の取得](#バージョン情報の取得)
   - [コードページの取得](#コードページの取得)
   - [各項目の取得](#各項目の取得)
-  - [算術演算子](#算術演算子)
+- [算術演算子](#算術演算子)
 - [デストラクター](#デストラクター)
-  - [仮想関数のアクセス指定子](#仮想関数のアクセス指定子)
-  - [マクロループ](#マクロループ)
+- [仮想関数のアクセス指定子](#仮想関数のアクセス指定子)
+- [マクロループ](#マクロループ)
 - [文字列分割](#文字列分割)
 - [std::cout](#stdcout)
 
@@ -373,7 +373,7 @@ LPTSTR pCpyRt = getSubBlock(_T("LegalCopyright"));  _ASSERT(pCpyRt);	// 著作�
 LPTSTR pCompa = getSubBlock(_T("CompanyName"));     _ASSERT(pCompa);	// 会社名(CompanyName)
 ```
 
-### 算術演算子
+## 算術演算子
 ```cpp
 T& operator=(const T& v) noexcept {if(this==&v) {/*_ASSERT(false);*/ return (*this);} CopyMemory(/*thisへコピー*/); return (*this);}
 T operator-(void) const {return T(/*負値化*/);}
@@ -406,13 +406,13 @@ void hoge()
 }
 ```
 
-### 仮想関数のアクセス指定子
+## 仮想関数のアクセス指定子
 仮想関数へのアクセス指定子は，   
 - C++では，オーバーライドする際に制約はない  
 - Javaでは，オーバーライドされる側のアクセス修飾子よりも範囲の広い物であればよい  
 - C#では，オーバーライド時のアクセス修飾子の変更は認められない  
 
-### マクロループ
+## マクロループ
 ```cpp
 #define CONCATENATE_MAIN(x, y) x##y
 #define CONCATENATE(x, y) CONCATENATE_MAIN(x, y)
