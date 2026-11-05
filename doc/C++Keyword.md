@@ -8,6 +8,7 @@
 - [仮想デストラクター](#仮想デストラクター)
   - [デストラクターのvirtual](#デストラクターのvirtual)
 - [四捨五入](#四捨五入)
+- [整数値のceil](#整数値のceil)
 - [ATLを使った文字列変換](#atlを使った文字列変換)
   - [注意事項](#注意事項)
 - [文字列変換](#文字列変換)
@@ -205,6 +206,16 @@ C++11では新しく`std::round`が追加されたので，それを使用する
 https://en.cppreference.com/cpp/numeric/math/round  
 `std::float_round_style`も見よ  
 https://cppreference.com/cpp/types/numeric_limits/float_round_style  
+
+## 整数値のceil
+正のときのみ  
+$$
+\left\lceil \frac{a}{b} \right\rceil
+= \frac{a+b-1}{b}
+$$
+```cpp
+constexpr unsigned int ceil(unsigned int dividend, unsigned int divisor) {return (dividend + divisor - 1)/divisor;}
+```
 
 ## ATLを使った文字列変換
 ```
